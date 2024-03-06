@@ -9,3 +9,7 @@ body{
     background-color: rgba(50, 157, 156, 1);
     color: white;
 }
+
+#wrapper{
+    display: flex;
+}
