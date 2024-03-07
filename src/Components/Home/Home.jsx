@@ -3,12 +3,11 @@ import BlockCreator from "./BlockCreator/BlockCreator";
 import './home.css'
 
 export default function Home() {
-    function blocksCreate() {
+    function blocksCreate(blocksItem = []) {
         const blocks = [];
-        const blocksItems = ['journal', 'professors', 'schedules', 'week']
-        for(let i = 0; i <= blocksItems.length; i++) {
+        for(let i = 0; i < blocksItem.length; i++) {
             blocks.push(
-                <BlockCreator par = {blocksItems[i]} name={blocksItems[i]}/>
+                <BlockCreator par = {blocksItem[i]} name={blocksItem[i]}/>
             );
         }
         return blocks;
@@ -16,7 +15,13 @@ export default function Home() {
 
     return(
         <main className={'main'}>
-            {blocksCreate()}
+            {blocksCreate(['week'])}
+            <div className='block__withButtons'>
+                {blocksCreate(['journal'])}
+                <div className='block__professorsAndSchedule'>
+                    {blocksCreate(['professors', 'schedule'])}
+                </div>
+            </div>
         </main>
     )
 }

@@ -1,29 +1,24 @@
-.main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: clamp(0.938rem, 0.649vw + 0.783rem, 1.563rem);
-  grid-auto-flow: row;
+$mainWidth: clamp(22.875rem, 77.987vw + 4.353rem, 97.938rem);
+.main{
+  display: flex;
+  width: 100%;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: clamp(0.938rem, 0.649vw + 0.783rem, 1.563rem);
 
-  .block__wrapper-journal {
-    grid-area: 1 / 1 / 4 / 2;
-    justify-self: end;
+  .block__withButtons{
+    display: flex;
+    gap: clamp(0.938rem, 0.649vw + 0.783rem, 1.563rem);
+    width: $mainWidth;
+
+    .block__professorsAndSchedule{
+      display: flex;
+      gap: clamp(0.938rem, 0.649vw + 0.783rem, 1.563rem);
+      width: calc($mainWidth * 3/4);
+      @media screen and (max-width: 1250px) {
+        flex-wrap: wrap ;
+      }
+    }
   }
-
-  .block__wrapper-week {
-    grid-area: 1 / 2 / 4 / 4;
-  }
-
-  .block__wrapper-professors {
-    grid-area: 2 / 2 / 4 / 3;
-    align-self: flex-start;
-  }
-
-  .block__wrapper-schedules {
-    grid-area: 2 / 3 / 4 / 4;
-    align-self: flex-start;
-  }
-
-  padding: 0 clamp(0.938rem, 2.662vw + 0.305rem, 3.5rem);
 }

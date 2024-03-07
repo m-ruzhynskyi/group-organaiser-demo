@@ -44,7 +44,7 @@ function SideMenu() {
                 </div>
                 <div className='category__link'>
                     <CalendarMonthOutlinedIcon sx={{ fontSize: 30}}/>
-                    <NavLink to='schedules' className='category__name'>Schedules</NavLink>
+                    <NavLink to='schedule' className='category__name'>Schedule</NavLink>
                 </div>
                 <div className='category__link'>
                     <SchoolOutlinedIcon sx={{ fontSize: 30}}/>
