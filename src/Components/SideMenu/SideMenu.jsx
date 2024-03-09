@@ -14,6 +14,7 @@ import {changeGroup, getSchedules} from "../../store/schedulesSlice";
 function SideMenu() {
     const dispatch = useDispatch()
     const schedules = useSelector(state => state.schedules.schedulesList)[0]
+    const group = useSelector(state => state.schedules.groupName)
 
     useEffect(() => {
         async function axiosGetDataSchedules() {
@@ -53,7 +54,7 @@ function SideMenu() {
             </div>
             <div className='nav__button-group'>
                 {schedules !== undefined &&
-                    <SelectList classForSelect={'button-group'} name='sideMenu' groups = {Object.keys(schedules)}/>
+                    <SelectList mode={'sideMenu'} name={group} list= {Object.keys(schedules)}/>
                 }
             </div>
             <div className='nav__account'>

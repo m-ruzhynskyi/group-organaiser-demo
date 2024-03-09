@@ -3,8 +3,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
 import uniqid from "uniqid";
 import {changeGroup} from "../../../store/schedulesSlice";
 
@@ -38,8 +38,7 @@ const StyledButton = styled(Button)(({theme}) => ({
     },
 }));
 
-export default function SelectList({name, groups}) {
-    const group = useSelector(state => state.schedules.groupName)
+export default function SelectList({name, list, isDisabled = 0, handleListClick}) {
     const dispatch = useDispatch()
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -48,15 +47,16 @@ export default function SelectList({name, groups}) {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = (e) => {
-        dispatch(changeGroup(e.target.textContent))
-        if(name === 'sideMenu'){
+        if (handleListClick === undefined){
+            dispatch(changeGroup(e.target.textContent))
             localStorage.setItem('group', e.target.textContent)
-        }
+        } else handleListClick(e)
         setAnchorEl(null);
     };
     return (
         <>
             <StyledButton
+                disabled={Boolean(isDisabled)}
                 id="select-list-button"
                 aria-controls={open ? 'select-list-menu' : undefined}
                 aria-haspopup="true"
@@ -66,7 +66,7 @@ export default function SelectList({name, groups}) {
                 onClick={handleClick}
                 endIcon={<KeyboardArrowDownIcon/>}
             >
-                {group}
+                {name}
             </StyledButton>
             <StyledMenu
                 id="select-list-menu"
@@ -74,10 +74,12 @@ export default function SelectList({name, groups}) {
                 open={open}
                 onClose={handleClose}
             >
-                {groups.map(singleGroup => {
+                {list.map(singleElement => {
                     return (
-                        <MenuItem key={uniqid()} onClick={handleClose} disableRipple>
-                            {singleGroup}
+                        <MenuItem key={uniqid()}
+                                  onClick={handleClose}
+                                  disableRipple>
+                            {singleElement}
                         </MenuItem>
                     )
                 })}

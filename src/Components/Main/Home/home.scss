@@ -1,9 +1,6 @@
 $mainWidth: clamp(22.875rem, 77.987vw + 4.353rem, 97.938rem);
-.main{
+.home{
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   gap: clamp(0.938rem, 0.649vw + 0.783rem, 1.563rem);
 

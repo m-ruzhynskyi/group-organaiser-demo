@@ -1,6 +1,7 @@
 import React from "react";
 import BlockCreator from "./BlockCreator/BlockCreator";
 import './home.css'
+import uniqid from "uniqid";
 
 export default function Home() {
     function blocksCreate(blocksItem = []) {
@@ -14,14 +15,14 @@ export default function Home() {
     }
 
     return(
-        <main className={'main'}>
+        <div key={uniqid()} className={'home'}>
             {blocksCreate(['week'])}
-            <div className='block__withButtons'>
+            <div key={uniqid()} className='block__withButtons'>
                 {blocksCreate(['journal'])}
-                <div className='block__professorsAndSchedule'>
+                <div key={uniqid()} className='block__professorsAndSchedule'>
                     {blocksCreate(['professors', 'schedule'])}
                 </div>
             </div>
-        </main>
+        </div>
     )
 }
