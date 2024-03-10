@@ -2,108 +2,12 @@ import './journalList.css'
 import {Divider} from "@mui/material";
 import {Fragment} from "react";
 import dataForTable from "../../../functions/dataForTable";
+import {useSelector} from "react-redux";
 
-export default function JournalList({name, list}) {
-    let test = [{
-        "Іванов": "1",
-        "Бондаренко": "1",
-        "Білоус": "1",
-        "Василенко": "1",
-        "Гончаренко": "1",
-        "Григоренко": "1",
-        "Даниленко": "1",
-        "Дата": "06.02.2024",
-        "Зайцев": "1",
-        "Захаренко": "1",
-        "Коваленко": "1",
-        "Козак": "1",
-        "Козлов": "1",
-        "Кравченко": "1",
-        "Кузьменко": "1",
-        "Кулик": "1",
-        "Лисенко": "1",
-        "Михайленко": "1",
-        "Мороз": "1",
-        "Осадчук": "1",
-        "Павленко": "1",
-        "Петренко": "1",
-        "Романенко": "1",
-        "Савченко": "1",
-        "Сидоренко": "1",
-        "Степаненко": "1",
-        "Ткаченко": "1",
-        "Ткачук": "1",
-        "Черновол": "1",
-        "Шаповаленко": "1",
-        "Шевченко": "1",
-        "Ярошенко": "1"
-    }, {
-        "Іванов": "1",
-        "Бондаренко": "1",
-        "Білоус": "1",
-        "Василенко": "1",
-        "Гончаренко": "1",
-        "Григоренко": "1",
-        "Даниленко": "1",
-        "Дата": "07.02.2024",
-        "Зайцев": "1",
-        "Захаренко": "1",
-        "Коваленко": "1",
-        "Козак": "1",
-        "Козлов": "1",
-        "Кравченко": "1",
-        "Кузьменко": "1",
-        "Кулик": "1",
-        "Лисенко": "1",
-        "Михайленко": "1",
-        "Мороз": "1",
-        "Осадчук": "1",
-        "Павленко": "1",
-        "Петренко": "1",
-        "Романенко": "1",
-        "Савченко": "1",
-        "Сидоренко": "1",
-        "Степаненко": "1",
-        "Ткаченко": "1",
-        "Ткачук": "1",
-        "Черновол": "1",
-        "Шаповаленко": "1",
-        "Шевченко": "1",
-        "Ярошенко": "1"
-    }, {
-        "Іванов": "1",
-        "Бондаренко": "1",
-        "Білоус": "1",
-        "Василенко": "1",
-        "Гончаренко": "1",
-        "Григоренко": "1",
-        "Даниленко": "1",
-        "Дата": "05.02.2024",
-        "Зайцев": "1",
-        "Захаренко": "1",
-        "Коваленко": "1",
-        "Козак": "1",
-        "Козлов": "1",
-        "Кравченко": "1",
-        "Кузьменко": "1",
-        "Кулик": "1",
-        "Лисенко": "1",
-        "Михайленко": "1",
-        "Мороз": "1",
-        "Осадчук": "1",
-        "Павленко": "1",
-        "Петренко": "1",
-        "Романенко": "1",
-        "Савченко": "1",
-        "Сидоренко": "1",
-        "Степаненко": "1",
-        "Ткаченко": "1",
-        "Ткачук": "1",
-        "Черновол": "1",
-        "Шаповаленко": "1",
-        "Шевченко": "1",
-        "Ярошенко": "1"
-    }]
+export default function JournalList() {
+    const groupData = useSelector(state => state.journal.groupData)
+    const groupName = useSelector(state => state.schedules.groupName)
+    const students = useSelector(state => state.schedules.schedulesList)[0][groupName]['students']
 
     function createMissTable(data) {
         const {dates, missed} = dataForTable(data)
@@ -164,14 +68,16 @@ export default function JournalList({name, list}) {
 
     return (
         <>
-            <table className={'journal__table'}>
-                <tbody>
-                <tr>
-                    <td className={'students'}>{createStudentTable(list)}</td>
-                    <td className={'missed'}>{createMissTable(test)}</td>
-                </tr>
-                </tbody>
-            </table>
+            {students !== undefined && (
+                <table className={'journal__table'}>
+                    <tbody>
+                    <tr>
+                        <td className={'students'}>{createStudentTable(students)}</td>
+                        <td className={'missed'}>{createMissTable(groupData)}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            )}
         </>
     )
 }

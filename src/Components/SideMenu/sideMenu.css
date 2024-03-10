@@ -5,7 +5,7 @@
   align-items: center;
   background: rgba(217, 217, 217, 0.3);
   height: 100vh;
-  width: clamp(10.938rem, 7.271vw + 6.275rem, 15rem);
+  width: clamp(10.625rem, 4.61vw + 9.53rem, 15.063rem);
   padding: 50px 0 196px 0;
 }
 .nav .nav__logo {
@@ -25,6 +25,11 @@
     scale: 0.9;
   }
 }
+@media only screen and (max-width: 1350px) {
+  .nav .nav__logo {
+    scale: 0.8;
+  }
+}
 .nav .nav__categories {
   margin-top: 50px;
 }
@@ -32,11 +37,15 @@
   display: flex;
   align-items: center;
 }
-.nav .nav__categories .category__link .category__name {
+.nav .nav__categories .category__link__name {
   font-size: 18px;
   font-family: "PoppinsMedium", serif;
   color: rgba(255, 255, 255, 0.6);
   transition: all ease-in-out 400ms;
+  display: flex;
+  align-items: center;
+}
+.nav .nav__categories .category__link__name__title {
   margin-left: 10px;
 }
 .nav .nav__categories .category__link .active {

@@ -5,7 +5,7 @@
   align-items: center;
   background: rgba(217, 217, 217, 0.3);
   height: 100vh;
-  width: clamp(10.938rem, 7.271vw + 6.275rem, 15rem);
+  width: clamp(10.625rem, 4.61vw + 9.53rem, 15.063rem);
   padding: 50px 0 196px 0;
 
   .nav__logo{
@@ -26,18 +26,27 @@
       scale: 0.9;
     }
   }
+  @media only screen and (max-width: 1350px){
+    .nav__logo{
+      scale: 0.8;
+    }
+  }
 
   .nav__categories{
     margin-top: 50px;
     .category__link{
       display: flex;
       align-items: center;
-      .category__name{
+      &__name{
         font-size: 18px;
         font-family: 'PoppinsMedium', serif;
         color: rgba(255, 255, 255, 0.6);
         transition: all ease-in-out 400ms;
-        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        &__title{
+          margin-left: 10px;
+        }
       }
       .active{
         font-family: 'PoppinsBold', serif;

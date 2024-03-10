@@ -10,6 +10,7 @@ import {useEffect} from "react";
 import SelectList from "../Reusable/SelectList/SelectList";
 import {useDispatch, useSelector} from "react-redux";
 import {changeGroup, getSchedules} from "../../store/schedulesSlice";
+import {getData} from "../../store/journalSlice";
 
 function SideMenu() {
     const dispatch = useDispatch()
@@ -17,18 +18,20 @@ function SideMenu() {
     const group = useSelector(state => state.schedules.groupName)
 
     useEffect(() => {
-        async function axiosGetDataSchedules() {
+        async function axiosGet() {
             await dispatch(getSchedules())
+            await dispatch(getData())
         }
-        axiosGetDataSchedules()
+
+        axiosGet()
     }, [dispatch]);
 
     useEffect(() => {
-        if(localStorage.group !== undefined){
+        if (localStorage.group !== undefined) {
             dispatch(changeGroup(localStorage.group))
         }
     }, [dispatch]);
-    return(
+    return (
         <nav className='nav'>
             <div className='nav__logo'>
                 <img src={logo} alt="Logo"/>
@@ -36,30 +39,31 @@ function SideMenu() {
             </div>
             <div className='nav__categories'>
                 <div className='category__link'>
-                    <HomeOutlinedIcon sx={{ fontSize: 30}}/>
-                    <NavLink to='' className='category__name'>Home</NavLink>
+                    <NavLink to='' className='category__link__name'><HomeOutlinedIcon sx={{fontSize: 30}}/><p
+                        className={'category__link__name__title'}>Home</p></NavLink>
                 </div>
                 <div className='category__link'>
-                    <GroupsOutlinedIcon sx={{ fontSize: 30}}/>
-                    <NavLink to='journal' className='category__name'>Journal</NavLink>
+                    <NavLink to='journal' className='category__link__name'> <GroupsOutlinedIcon sx={{fontSize: 30}}/>
+                        <p className={'category__link__name__title'}>Journal</p></NavLink>
                 </div>
                 <div className='category__link'>
-                    <CalendarMonthOutlinedIcon sx={{ fontSize: 30}}/>
-                    <NavLink to='schedule' className='category__name'>Schedule</NavLink>
+                    <NavLink to='schedule' className='category__link__name'> <CalendarMonthOutlinedIcon
+                        sx={{fontSize: 30}}/>
+                        <p className={'category__link__name__title'}>Schedule</p></NavLink>
                 </div>
                 <div className='category__link'>
-                    <SchoolOutlinedIcon sx={{ fontSize: 30}}/>
-                    <NavLink to='professors' className='category__name'>Professors</NavLink>
+                    <NavLink to='professors' className='category__link__name'> <SchoolOutlinedIcon sx={{fontSize: 30}}/>
+                        <p className={'category__link__name__title'}>Professors</p></NavLink>
                 </div>
             </div>
             <div className='nav__button-group'>
                 {schedules !== undefined &&
-                    <SelectList mode={'sideMenu'} name={group} list= {Object.keys(schedules)}/>
+                    <SelectList mode={'sideMenu'} name={group} list={Object.keys(schedules)}/>
                 }
             </div>
             <div className='nav__account'>
                 <div className='account__login'>
-                    <LoginOutlinedIcon sx={{ fontSize: 30}}/>
+                    <LoginOutlinedIcon sx={{fontSize: 30}}/>
                     <NavLink to='5' className='account__text'>Login</NavLink>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 }
 .main__name__page {
   font-family: "PoppinsBold", serif;
-  font-size: clamp(0rem, 3.377vw - 0.802rem, 3.25rem);
+  font-size: clamp(2.625rem, 1.299vw + 1.692rem, 3.25rem);
   text-align: end;
   margin-bottom: clamp(0.313rem, 0.325vw + 0.235rem, 0.625rem);
   width: 85%;

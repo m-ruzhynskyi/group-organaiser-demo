@@ -5,8 +5,8 @@ export default function dataForTable(data) {
     let missed = []
     let dataWithoutDate = [];
 
-    // eslint-disable-next-line array-callback-return
-    data.map((date, key) => Object.keys(date).map((element, id) => {
+    data.forEach((date, key) => Object.keys(date).forEach((element, id) => {
+        if(element === 'row_id' || element === 'Subj') return
         if (element === 'Дата') {
             dates.push(formatedDate(date[element]));
         } else {
@@ -17,8 +17,7 @@ export default function dataForTable(data) {
         }
     }))
 
-    // eslint-disable-next-line array-callback-return
-    dataWithoutDate.map((date) => Object.keys(date).map((element, id) => {
+    dataWithoutDate.forEach((date) => Object.keys(date).forEach((element, id) => {
         let temp = date[element]
         if (missed[id] === undefined) {
             missed.push([temp])
