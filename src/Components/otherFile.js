@@ -1,4 +1,4 @@
-export const link = 'https://v1.slashapi.com/tenshi/google-sheets/rUo2xAhO1f'
+export const link = 'https://v1.slashapi.com/testi-2/google-sheets/kxtds019J5'
 
 export let surnames = [
     'Білоус',

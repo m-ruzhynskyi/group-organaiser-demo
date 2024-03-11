@@ -13,4 +13,14 @@
     };
     width: 85%;
   }
+
+    @media only screen and (max-width: 950px) {
+      &{
+        height: 100%;
+        margin-bottom: 20px;
+        .main__name__page{
+          display: none;
+        }
+      }
+    }
 }

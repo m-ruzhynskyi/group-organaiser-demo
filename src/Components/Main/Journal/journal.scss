@@ -2,7 +2,7 @@
   justify-content: center;
   align-items: center;
   width: clamp(20.938rem, 80vw + 1.938rem, 97.938rem);
-  height: clamp(38.25rem, 15.584vw + 34.549rem, 53.25rem);
+  height: clamp(40.938rem, 12.792vw + 37.899rem, 53.25rem);
 
   background: rgba(217, 217, 217, 0.3);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -11,7 +11,7 @@
 
   &__button__div {
     margin: {
-      top: 20px;
+      top: clamp(0.625rem, 0.935vw + 0.129rem, 1.25rem);
     };
   }
 }

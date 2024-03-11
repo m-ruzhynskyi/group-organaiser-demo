@@ -1,10 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
-import schedulesReducer from './schedulesSlice'
+import schedulesSlice from './schedulesSlice'
 import journalSlice from './journalSlice'
+import menuSlice from "./menuSlice";
 
 export default configureStore({
     reducer:{
-        schedules: schedulesReducer,
-        journal: journalSlice
+        schedules: schedulesSlice,
+        journal: journalSlice,
+        menu: menuSlice
     }
 })

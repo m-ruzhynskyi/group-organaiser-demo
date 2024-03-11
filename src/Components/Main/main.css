@@ -12,5 +12,14 @@
   margin-bottom: clamp(0.313rem, 0.325vw + 0.235rem, 0.625rem);
   width: 85%;
 }
+@media only screen and (max-width: 950px) {
+  .main {
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .main .main__name__page {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
