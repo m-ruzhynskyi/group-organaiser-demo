@@ -18,7 +18,7 @@ const schedulesSlice = createSlice({
     initialState: {
         schedulesList: [],
         groupName: 'group',
-        status: 'idle',
+        status: null,
         error: null
     },
     reducers:{
@@ -31,14 +31,14 @@ const schedulesSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(getSchedules.pending, (state) => {
-                state.status = 'loading'
+                state.status = false
             })
             .addCase(getSchedules.fulfilled, (state, action) => {
-                state.status = 'succeeded'
+                state.status = true
                 state.schedulesList = action.payload
             })
             .addCase(getSchedules.rejected, (state, action) => {
-                state.status = 'failed'
+                state.status = 'error'
                 state.error = action.payload
             })
     }

@@ -27,8 +27,8 @@ export default function Journal() {
         setChosenSubj('subject')
     }, [groupName]);
     return (
-        <div className={'journal'} style={{display: statusShedule !== 'succeeded' || !statusJournal ? 'flex' : 'block'}}>
-            {statusShedule !== 'succeeded' || !statusJournal ? <Loader/> : (
+        <div className={'journal'} style={{display: !statusShedule|| !statusJournal ? 'flex' : 'block'}}>
+            {!statusShedule || !statusJournal ? <Loader/> : (
                 <>
                     <div className={'journal__button__div'}>
                         <SelectList isDisabled={groupName === 'group' && 1} handleListClick={(e) => newSubject(e)}
