@@ -3,7 +3,7 @@
   justify-content: center;
   margin-top: clamp(0.813rem, 2.857vw - 1.241rem, 2.188rem);
   width: 100%;
-  height: clamp(35.125rem, 10vw + 32.75rem, 44.75rem);
+  height: 70vh;
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -26,6 +26,9 @@
 .journal__list .journal__table .students__table {
   border-collapse: separate;
   border-spacing: 0 8px;
+}
+.journal__list .journal__table .students__table tr {
+  background-color: #56C696;
 }
 .journal__list .journal__table .students__table tr td:first-child {
   border-radius: 15px 0 0 15px;

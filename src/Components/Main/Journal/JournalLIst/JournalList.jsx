@@ -3,6 +3,7 @@ import {Divider} from "@mui/material";
 import {Fragment} from "react";
 import dataForTable from "../../../functions/dataForTable";
 import {useSelector} from "react-redux";
+import uniqid from "uniqid";
 
 export default function JournalList() {
     const groupData = useSelector(state => state.journal.groupData)
@@ -17,10 +18,10 @@ export default function JournalList() {
                     <thead className={'missed__table__head'}>
                     <tr>
                         {dates.map(date => (
-                            <>
+                            <Fragment key={uniqid()}>
                                 <td>{date}</td>
                                 <td><Divider orientation="vertical" variant="inset"/></td>
-                            </>
+                            </Fragment>
                         ))}
                     </tr>
                     </thead>
@@ -28,10 +29,10 @@ export default function JournalList() {
                     {missed.map(miss => (
                         <tr className={'students__table__body__miss'}>
                             {miss.map(res => (
-                                <>
+                                <Fragment key={uniqid()}>
                                     <td>{res}</td>
                                     <td><Divider orientation="vertical" variant="inset"/></td>
-                                </>
+                                </Fragment>
                             ))}
                         </tr>
                     ))}
@@ -55,7 +56,7 @@ export default function JournalList() {
                 </thead>
                 <tbody className={'students__table__body'}>
                 {data.map((student, id) => (
-                    <tr className={'students__table__body__student'}>
+                    <tr key={uniqid()} className={'stu dents__table__body__student'}>
                         <td>{id + 1}</td>
                         <td><Divider orientation="vertical" variant="inset"/></td>
                         <td>{student}</td>
