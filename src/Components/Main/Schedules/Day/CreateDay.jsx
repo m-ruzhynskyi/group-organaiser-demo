@@ -22,7 +22,7 @@ export default function CreateDay({data, id}) {
             </div>
         )
     }
-
+    console.log(123)
     return (
         <div key={uniqid()} className={'day ' + (today - 1 === id ? 'today': '')}>
         <h3 className={'day__header__name'}>{daysOfWeek[id]}</h3>

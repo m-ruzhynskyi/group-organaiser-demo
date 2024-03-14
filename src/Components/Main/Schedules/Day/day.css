@@ -1,10 +1,10 @@
 .day {
-  background-color: rgba(232, 227, 227, 0.2);
+  background: linear-gradient(to right, rgba(232, 227, 227, 0.2), #66aaa9);
   padding: clamp(0.813rem, 0.779vw + 0.627rem, 1.563rem) clamp(0.625rem, 0.39vw + 0.532rem, 1rem);
   border-radius: 15px;
   height: clamp(14rem, 8.182vw + 12.057rem, 21.875rem);
   width: clamp(19.5rem, 11.558vw + 16.755rem, 30.625rem);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.19);
 }
 .day [class^=MuiDivider] {
   border-color: #ffffff;

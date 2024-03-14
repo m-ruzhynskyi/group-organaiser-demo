@@ -5,6 +5,7 @@ import Loader from "../../Reusable/Loader/Loader";
 import determineWeek from "../../functions/determineWeek";
 import uniqid from "uniqid";
 import './schedules.css'
+import DontHaveData from "../../Reusable/DontHaveData/DontHaveData";
 
 export default function Schedules() {
     const group = useSelector(state => state.schedules.groupName)
@@ -23,9 +24,10 @@ export default function Schedules() {
             {!status ? <Loader/> :
                 group === 'group' ?
                     <NotSelected text={'a group'}/> :
+                    sortDays().length !== 0 ?
                     (<div className={'schedule__wrapper'}>
                         {sortDays().map((day, id) => <CreateDay key={uniqid()} id={id} data={day}/>)}
-                    </div>)
+                    </div>): <DontHaveData/>
             }
             <div></div>
         </div>
