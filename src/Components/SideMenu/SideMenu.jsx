@@ -1,6 +1,6 @@
 import './sideMenu.css'
 import logo from '../../assets/img/logoSvg.svg'
-import {NavLink, useLocation} from "react-router-dom";
+import {NavLink, useLocation, Link} from "react-router-dom";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -32,7 +32,8 @@ function SideMenu() {
             dispatch(changeStatus())
 
         }
-    }, [link]);
+        // eslint-disable-next-line
+    }, [dispatch, link]);
 
     return (
         <header className={'header'}>
@@ -40,10 +41,10 @@ function SideMenu() {
             <label className="hamb" htmlFor="side__menu"><p className={'side__menu__text'}>Menu</p><span
                 className="hamb__line"></span></label>
             <div className='nav__logo'>
-                <div className={'logoDiv'}>
+                <Link to={''} className={'logoDiv'}>
                     <img src={logo} alt="Logo"/>
                     <h3 className='logo__name'>Journal</h3>
-                </div>
+                </Link>
             </div>
             <nav className='nav'>
                     <div className='nav__categories'>

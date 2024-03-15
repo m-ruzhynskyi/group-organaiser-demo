@@ -4,6 +4,7 @@ import './main.css'
 import Journal from "./Journal/Journal";
 import {useSelector} from "react-redux";
 import Schedules from "./Schedules/Schedules";
+import Professors from "./Professors/Professors";
 
 export default function Main() {
     const link = useLocation()['pathname'].replace('/', '')
@@ -15,7 +16,7 @@ export default function Main() {
                 <Route path={''} element={<Home/>}/>
                 <Route path={'journal/*'} element={<Journal/>}/>
                 <Route path={'schedule/*'} element={<Schedules/>}/>
-                <Route/>
+                <Route path={'professors/*'} element={<Professors/>}/>
                 <Route/>
             </Routes>
         </main>

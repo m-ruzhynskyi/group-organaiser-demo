@@ -19,11 +19,11 @@
     align-items: center;
     grid-area: logo;
 
-
     .logoDiv {
       display: flex;
       justify-content: center;
       align-items: center;
+      color: white;
 
       .logo__name {
         font-size: 26px;
@@ -83,6 +83,7 @@
 
   .side__menu:checked ~ .nav {
     min-height: 80vh;
+
     .nav__categories, .nav__button-group, .nav__account {
       display: block;
     }

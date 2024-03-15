@@ -15,12 +15,12 @@ function App() {
         dispatch(getLink())
     }, [dispatch]);
 
-
     useEffect(() => {
         if (journalLink !== null){
             dispatch(getData())
         }
-    }, [journalLink]);
+    }, [dispatch, journalLink]);
+
     return (
         <>
             <SideMenu/>
