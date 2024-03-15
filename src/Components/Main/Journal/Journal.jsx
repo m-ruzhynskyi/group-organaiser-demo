@@ -3,16 +3,19 @@ import {useDispatch, useSelector} from "react-redux";
 import NotSelected from "../../Reusable/NotSelected/NotSelected";
 import SelectList from "../../Reusable/SelectList/SelectList";
 import Loader from "../../Reusable/Loader/Loader";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import JournalList from "./JournalLIst/JournalList";
 import {getJournalBySubject} from "../../../store/journalSlice";
+import DontHaveData from "../../Reusable/DontHaveData/DontHaveData";
 
 export default function Journal() {
     const [chosenSubj, setChosenSubj] = useState('subject')
     const groupName = useSelector(state => state.schedules.groupName)
     const subjects = useSelector(state => state.schedules.schedulesList)[0]
-    const statusShedule = useSelector(state => state.schedules.status)
+    const statusSchedule = useSelector(state => state.schedules.status)
     const statusJournal = useSelector(state => state.journal.status)
+    const errorSchedule = useSelector(state => state.schedules.error)
+    const errorJournal = useSelector(state => state.journal.error)
     const dispatch = useDispatch()
 
     function newSubject(e) {
@@ -27,8 +30,9 @@ export default function Journal() {
         setChosenSubj('subject')
     }, [groupName]);
     return (
-        <div className={'journal'} style={{display: !statusShedule|| !statusJournal ? 'flex' : 'block'}}>
-            {!statusShedule || !statusJournal ? <Loader/> : (
+        <div className={'journal'} style={{display: (!statusSchedule || !statusJournal) || (errorSchedule || errorJournal) ? 'flex' : 'block'}}>
+            {!statusSchedule || !statusJournal ? <Loader/> :
+                errorSchedule || errorJournal ? <DontHaveData/> :(
                 <>
                     <div className={'journal__button__div'}>
                         <SelectList isDisabled={groupName === 'group' && 1} handleListClick={(e) => newSubject(e)}

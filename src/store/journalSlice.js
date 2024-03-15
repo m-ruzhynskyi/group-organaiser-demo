@@ -1,14 +1,29 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {courses, link} from "../Components/otherFile";
 import axios from "axios";
+
+
+export const getLink = createAsyncThunk(
+    'schedules/getLink',
+    async function (_, {rejectWithValue}) {
+        try {
+            const response = await axios.get('https://65e5ffb1d7f0758a76e7ec04.mockapi.io/linkAPI')
+            return response.data[0]['link']
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
 
 export const getData = createAsyncThunk(
     'data/getData',
-    async function (_) {
+    async function (_, {rejectWithValue, getState}) {
         try {
             let tempArr = []
-            for (let i = 1; i < courses.length + 1; i++) {
-                const response = await axios.get(link + '/' + i)
+            const state = getState();
+            const subjectsSheet = await axios.get(state.journal.journalLink)
+            const lenOfSubjects = Object.keys(subjectsSheet.data.data).length - 1
+            for (let i = 1; i < lenOfSubjects + 1; i++) {
+                const response = await axios.get( state.journal.journalLink + '/' + i)
                 if (response.statusText === 'OK') {
                     response.data.data.forEach(element => {
                         let month = [Number(element['Дата'].split('.')[1])] - 1;
@@ -20,7 +35,7 @@ export const getData = createAsyncThunk(
             }
             return tempArr
         } catch (error) {
-            return error.message
+            return rejectWithValue(error.message)
         }
     }
 )
@@ -31,7 +46,8 @@ const dataSlice = createSlice({
     initialState: {
         journal: [],
         status: null,
-        error: null
+        error: null,
+        journalLink: null
     },
     reducers: {
         getJournalBySubject(state, action) {
@@ -55,10 +71,22 @@ const dataSlice = createSlice({
                 state.journal = action.payload
             })
             .addCase(getData.rejected, (state, action) => {
-                state.error = action.payload
+                state.status = true
+                state.error = true
+            })
+            .addCase(getLink.pending, (state) => {
+                state.status = false
+            })
+            .addCase(getLink.fulfilled, (state, action) => {
+                state.status = true
+                state.journalLink = action.payload
+            })
+            .addCase(getLink.rejected, (state, action) => {
+                state.status = true
+                state.error = true
             })
     },
 })
 
-export const {getJournalBySubject,  addReducer, updateReducer, editStatus} = dataSlice.actions
+export const {getJournalBySubject, addReducer, updateReducer, editStatus} = dataSlice.actions
 export default dataSlice.reducer

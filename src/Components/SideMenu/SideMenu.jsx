@@ -9,8 +9,7 @@ import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import {useEffect, useRef} from "react";
 import SelectList from "../Reusable/SelectList/SelectList";
 import {useDispatch, useSelector} from "react-redux";
-import {changeGroup, getSchedules} from "../../store/schedulesSlice";
-import {getData} from "../../store/journalSlice";
+import {changeGroup} from "../../store/schedulesSlice";
 import {changeStatus} from "../../store/menuSlice";
 
 function SideMenu() {
@@ -20,15 +19,6 @@ function SideMenu() {
     const group = useSelector(state => state.schedules.groupName)
     const status = useSelector(state => state.menu.menuStatus)
     const link = useLocation()['pathname'].replace('/', '')
-
-    useEffect(() => {
-        async function axiosGet() {
-            await dispatch(getSchedules())
-            await dispatch(getData())
-        }
-
-        axiosGet()
-    }, [dispatch]);
 
     useEffect(() => {
         if (localStorage.group !== undefined) {

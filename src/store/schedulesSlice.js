@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from 'axios'
 
 export const getSchedules = createAsyncThunk(
     'schedules/getSchedules',
-    async function (_, { rejectWithValue }) {
+    async function (_, {rejectWithValue}) {
         try {
             const response = await axios.get('https://65e5ffb1d7f0758a76e7ec04.mockapi.io/shedule')
             return response.data
@@ -21,9 +21,9 @@ const schedulesSlice = createSlice({
         status: null,
         error: null
     },
-    reducers:{
-        changeGroup(state, action){
-            if(action.payload !== '') {
+    reducers: {
+        changeGroup(state, action) {
+            if (action.payload !== '') {
                 state.groupName = action.payload
             }
         }
@@ -38,10 +38,10 @@ const schedulesSlice = createSlice({
                 state.schedulesList = action.payload
             })
             .addCase(getSchedules.rejected, (state, action) => {
-                state.status = 'error'
-                state.error = action.payload
+                state.status = true
+                state.error = true
             })
     }
 })
-export const { changeGroup} = schedulesSlice.actions
+export const {changeGroup} = schedulesSlice.actions
 export default schedulesSlice.reducer
