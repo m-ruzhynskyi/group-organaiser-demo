@@ -1,0 +1,16 @@
+.professors {
+  display: flex;
+}
+.professors__wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/*# sourceMappingURL=professors.css.map */

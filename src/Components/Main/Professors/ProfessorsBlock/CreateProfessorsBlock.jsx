@@ -9,8 +9,8 @@ export default function CreateProfessorsBlock({professor, subj}) {
         } else {
             return (
                 <>
-                    <p className={'professor__info__subj'}>{Object.values(subj)[0]}</p>
-                    <p className={'professor__info__role'}>{Object.keys(subj)[0]}</p>
+                    <p className={'professor__info__role'}>{Object.values(subj)[0]}</p>
+                    <p className={'professor__info__subj'}>{Object.keys(subj)[0]}</p>
                 </>
             )
         }
