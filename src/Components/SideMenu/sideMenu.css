@@ -170,6 +170,9 @@
     padding-right: 2px;
     padding-left: 5px;
   }
+  .header .active p {
+    display: none;
+  }
 }
 @media only screen and (max-width: 950px) {
   .header {
@@ -208,6 +211,9 @@
   }
   .header .nav__logo .logo__name {
     display: inline;
+  }
+  .header .active p {
+    display: block;
   }
 }
 

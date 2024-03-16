@@ -207,6 +207,12 @@
         left: 5px;
       };
     }
+
+    .active{
+      p{
+        display: none;
+      }
+    }
   }
 
   @media only screen and (max-width: 950px) {
@@ -259,6 +265,11 @@
         .logo__name {
           display: inline;
         }
+      }
+      .active{
+        p{
+          display: block;
+        };
       }
     }
   }
