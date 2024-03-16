@@ -1,34 +1,28 @@
-import modules from "./category.module.css";
-import CreateBlock from "./CreateBlock";
-import {useEffect} from "react";
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import React from "react";
+import {useSelector} from "react-redux";
+import CreateBlock from "./CreateBlock/CreateBlock";
+import './category.css'
 
-export default function Category({user}) {
+export default function Category() {
+    const user = useSelector(state => state.user.user)
     const navigate = useNavigate()
+
     function nextPage(e) {
-        if (e){
-            let nextPage = e.target.closest('.block_block__eBazp').children[1].textContent.toLowerCase()
+        if (e) {
+            let nextPage = e.target.closest('.block').children[1].textContent.toLowerCase()
             navigate(nextPage)
-        } else navigate('')
+        }
     }
 
     return (
-        <>
-
-        </>
-        // <Routes>
-        //     <Route path={''} element={
-        //         <div className={modules.variantsBlock}>
-        //         <div className={modules.variants} style={{width: (user === 'helper' || user === 'admin') ? '100%' : ''}}>
-        //             <CreateBlock nextPage={nextPage}/>
-        //             {(user === 'helper' || user === 'admin') && <CreateBlock type={'first'} nextPage={nextPage} user={user}/>}
-        //             {(user === 'admin') && <CreateBlock type={'second'} nextPage={nextPage} user={user}/>}
-        //         </div>
-        //     </div>
-        //     }/>
-        //     <Route path={'moderate/*'} element={<Moderate/>}/>
-        //     <Route path={'journal/*'} element={<Journal/>}/>
-        //     <Route path={'group/*'} element={<GroupMiss/>}/>
-        // </Routes>
+        <div className={'variantsBlock'}>
+            <div className={'variantsBlock__variants'}>
+                <CreateBlock nextPage={nextPage}/>
+                {(user === 'helper' || user === 'admin') &&
+                    <CreateBlock type={'first'} nextPage={nextPage} user={user}/>}
+                {(user === 'admin') && <CreateBlock type={'second'} nextPage={nextPage} user={user}/>}
+            </div>
+        </div>
     )
 }

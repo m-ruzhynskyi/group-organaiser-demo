@@ -1,18 +1,40 @@
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Category from "./Category/Category";
+import {useEffect, useState} from "react";
+import JournalMore from "./JournalMore/JournalMore";
 import {useSelector} from "react-redux";
-import {useEffect} from "react";
+import Loader from "../../../Reusable/Loader/Loader";
+import DontHaveData from "../../../Reusable/DontHaveData/DontHaveData";
+import NotSelected from "../../../Reusable/NotSelected/NotSelected";
 
 export default function MoreMain() {
-    const user = useSelector(state => state.user.user)
     const navigate = useNavigate()
+    const groupName = useSelector(state => state.schedules)
+    const statusSchedule = useSelector(state => state.schedules.status)
+    const statusJournal= useSelector(state => state.journal.status)
+    const errorSchedule = useSelector(state => state.schedules.error)
+    const errorJournal = useSelector(state => state.journal.error)
 
     useEffect(() => {
         if (!localStorage.user) navigate('/#')
     }, []);
-    return(
+    return (
         <Routes>
-            <Route path={'category'} element={<Category/>}/>
+            <Route path={''} element={<Category/>}/>
+            <Route path={'journal'} element={
+                <div className={'journal'}
+                     style={{display: (!statusSchedule || !statusJournal) || (errorSchedule || errorJournal) ? 'flex' : 'block'}}>
+                    {!statusSchedule || !statusJournal ? <Loader/> :
+                        errorSchedule || errorJournal ? <DontHaveData/> : (
+                            <>
+                                {groupName === 'group' ?
+                                    <NotSelected text={`a group`}/> : (
+                                        <JournalMore/>
+                                    )}
+                            </>
+                        )}
+                </div>
+            }/>
         </Routes>
     )
 }

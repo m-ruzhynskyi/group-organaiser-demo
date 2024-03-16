@@ -1,7 +1,5 @@
-.professors {
-  display: flex;
-
-  &__wrapper {
+.professors{
+  &__wrapper{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -10,6 +8,5 @@
     height: 70vh;
     overflow-x: hidden;
     overflow-y: auto;
-    scroll-behavior: smooth;
   }
 }

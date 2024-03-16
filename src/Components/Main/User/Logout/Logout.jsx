@@ -1,6 +1,6 @@
 import './logout.css'
 import {useDispatch} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {logoutUser} from "../../../../store/userSlice";
 import {useEffect} from "react";
 export default function Logout() {
@@ -9,6 +9,7 @@ export default function Logout() {
     function handleLogout() {
         dispatch(logoutUser())
         localStorage.removeItem('user')
+        navigate('/')
     }
 
     useEffect(() => {
@@ -16,8 +17,8 @@ export default function Logout() {
     }, []);
     return(
         <div className={'logoutPage'}>
-            <button className={'logout__logout'} onClick={handleLogout}><Link to={'/#'}>Logout</Link></button>
-            <button className={'logout__cancel'}><Link to={'/more'}>Cancel</Link></button>
+            <button className={'logout__logout'} onClick={handleLogout}>Logout</button>
+            <button className={'logout__cancel'} onClick={() => navigate('/more')}>Cancel</button>
         </div>
     )
 }
