@@ -7,6 +7,7 @@ import Schedules from "./Schedules/Schedules";
 import Professors from "./Professors/Professors";
 import Login from "./User/Login/Login";
 import Logout from "./User/Logout/Logout";
+import MoreMain from "./User/More/MoreMain";
 
 export default function Main() {
     const link = useLocation()['pathname'].replace('/', '')
@@ -21,10 +22,8 @@ export default function Main() {
                 <Route path={'schedule/*'} element={<Schedules/>}/>
                 <Route path={'professors/*'} element={<Professors/>}/>
                 <Route path={'login/*'} element={<Login/>}/>
-                {user !== null &&
-                <>
-                    <Route path={'logout/*'} element={<Logout/>}/>
-                </>}
+                <Route path={'logout/*'} element={<Logout/>}/>
+                <Route path={'more/*'} element={<MoreMain/>}/>
             </Routes>
         </main>
     )
