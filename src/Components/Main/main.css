@@ -13,6 +13,9 @@
   width: 85%;
 }
 @media only screen and (max-width: 950px) {
+  .main {
+    height: 100%;
+  }
   .main .main__name__page {
     display: none;
   }

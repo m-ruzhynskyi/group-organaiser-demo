@@ -5,6 +5,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getData, getLink} from "./store/journalSlice";
 import {getSchedules} from "./store/schedulesSlice";
+import {recoverUser} from "./store/userSlice";
 
 function App() {
     const dispatch = useDispatch()
@@ -21,6 +22,12 @@ function App() {
         }
     }, [dispatch, journalLink]);
 
+
+    useEffect(() => {
+        if(localStorage.user !== undefined){
+            dispatch(recoverUser(localStorage.user))
+        }
+    }, [dispatch]);
     return (
         <>
             <SideMenu/>

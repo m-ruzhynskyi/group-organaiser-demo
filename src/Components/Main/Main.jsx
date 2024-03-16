@@ -5,9 +5,12 @@ import Journal from "./Journal/Journal";
 import {useSelector} from "react-redux";
 import Schedules from "./Schedules/Schedules";
 import Professors from "./Professors/Professors";
+import Login from "./User/Login/Login";
+import Logout from "./User/Logout/Logout";
 
 export default function Main() {
     const link = useLocation()['pathname'].replace('/', '')
+    const user = useSelector(state => state.user.user)
     const menuStatus = useSelector(state => state.menu.menuStatus)
     return (
         <main style={{display: menuStatus ? 'flex' : 'none'}} className={'main'}>
@@ -17,7 +20,11 @@ export default function Main() {
                 <Route path={'journal/*'} element={<Journal/>}/>
                 <Route path={'schedule/*'} element={<Schedules/>}/>
                 <Route path={'professors/*'} element={<Professors/>}/>
-                <Route/>
+                <Route path={'login/*'} element={<Login/>}/>
+                {user !== null &&
+                <>
+                    <Route path={'logout/*'} element={<Logout/>}/>
+                </>}
             </Routes>
         </main>
     )

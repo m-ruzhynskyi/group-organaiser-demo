@@ -126,14 +126,17 @@
 .header .nav .nav__account {
   transform: translateX(-5px);
 }
-.header .nav .nav__account .account__login__link {
+.header .nav .nav__account .more {
+  margin-bottom: 15px;
+}
+.header .nav .nav__account .account__userOption__link {
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   font-family: "PoppinsMedium", serif;
 }
-.header .nav .nav__account .account__login__link__title {
+.header .nav .nav__account .account__userOption__link__title {
   transition: all ease-in-out 400ms;
   margin-left: 10px;
 }

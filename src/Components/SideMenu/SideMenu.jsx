@@ -6,6 +6,8 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import {useEffect, useRef} from "react";
 import SelectList from "../Reusable/SelectList/SelectList";
 import {useDispatch, useSelector} from "react-redux";
@@ -18,6 +20,7 @@ function SideMenu() {
     const schedules = useSelector(state => state.schedules.schedulesList)[0]
     const group = useSelector(state => state.schedules.groupName)
     const status = useSelector(state => state.menu.menuStatus)
+    const user = useSelector(state => state.user.user)
     const link = useLocation()['pathname'].replace('/', '')
 
     useEffect(() => {
@@ -30,7 +33,6 @@ function SideMenu() {
         if(!status){
             menu.current.checked = false
             dispatch(changeStatus())
-
         }
         // eslint-disable-next-line
     }, [dispatch, link]);
@@ -74,11 +76,29 @@ function SideMenu() {
                         }
                     </div>
                     <div className='nav__account'>
-                        <div className='account__login'>
-                            <NavLink to='login' className='account__login__link'> <LoginOutlinedIcon
-                                sx={{fontSize: 30}}/>
-                                <p className={'account__login__link__title'}>Login</p></NavLink>
-                        </div>
+                        {user !== null ? (
+                                <>
+                                    <div className={'more'}>
+                                        <NavLink to='more' className='account__userOption__link'>
+                                            <MoreHorizOutlinedIcon
+                                                sx={{fontSize: 30}}/>
+                                            <p className={'account__userOption__link__title'}>More</p></NavLink>
+                                    </div>
+                                    <div className={'logout'}>
+                                        <NavLink to='logout' className='account__userOption__link'>
+                                            <LogoutOutlinedIcon
+                                                sx={{fontSize: 30}}/>
+                                            <p className={'account__userOption__link__title'}>Logout</p></NavLink>
+                                    </div>
+                                </>) :
+                            (
+                                <div className={'login'}>
+                                    <NavLink to='login' className='account__userOption__link'> <LoginOutlinedIcon
+                                        sx={{fontSize: 30}}/>
+                                        <p className={'account__userOption__link__title'}>Login</p></NavLink>
+                                </div>
+                            )
+                    }
                     </div>
             </nav>
         </header>

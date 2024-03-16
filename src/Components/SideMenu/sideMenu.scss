@@ -150,8 +150,11 @@
     .nav__account {
       transform: translateX(-5px);
 
+      .more{
+        margin-bottom: 15px;
+      }
 
-      .account__login__link {
+      .account__userOption__link {
         display: flex;
         align-items: center;
         color: rgba(255, 255, 255, 0.6);
@@ -195,6 +198,7 @@
         display: none;
       }
     }
+
     [class^='MuiButton'] {
       margin: 0 7px;
       padding: clamp(0.313rem, 0.139vw + 0.208rem, 0.375rem) 0;
@@ -238,6 +242,7 @@
           display: inline;
         }
       }
+
 
       [class^='MuiButton'] {
         margin: 0;
