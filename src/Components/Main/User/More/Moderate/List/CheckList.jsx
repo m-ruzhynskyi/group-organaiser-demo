@@ -47,7 +47,7 @@ export default function CheckList({subject, mode}) {
     }
 
     useEffect(() => {
-        const axiosDataFirstRound = async () => {
+        const axiosPutOrUpdate = async () => {
             navigate('/more')
             try {
                 dispatch(editStatus())
@@ -67,7 +67,7 @@ export default function CheckList({subject, mode}) {
             }
             setDataSend([])
         }
-        (Object.keys(dataSend).length > 0) && axiosDataFirstRound()
+        (Object.keys(dataSend).length > 0) && axiosPutOrUpdate()
         // eslint-disable-next-line
     }, [dataSend]);
 

@@ -16,7 +16,7 @@ export default function Blackout() {
         <div className={'blackout'}>
             <div className={'missing'}>
                 <CloseOutlinedIcon className={'missing__close'} sx={{fontSize: 30}} onClick={handleClose}/>
-                {mode === 'journal' ? (
+                {mode === 'journal' && (
                     <>
                         <div className={'missing__head'}>
                             <h2 className={'missing__head__title'}>Absent on {date} :</h2>
@@ -35,27 +35,6 @@ export default function Blackout() {
                                 })}
                             </ul>
                         </div>
-                    </>
-                ) : (
-                    <>
-                        {/*<div className={'missing__head'}>*/}
-                        {/*    <h2 className={'missing__head__title'}>{student} was absent :</h2>*/}
-                        {/*</div>*/}
-                        {/*<div className={'missing__main'}>*/}
-                        {/*    <ul className={'missing__main__ul'}>*/}
-                        {/*        {missInfo.map((dates, key) => {*/}
-                        {/*            for (let id = 0; id < dates.length - 1; id++) {*/}
-                        {/*                dates[id] = dates[id] + ', '*/}
-                        {/*            }*/}
-                        {/*            return (*/}
-                        {/*                <li key={uniqid()} className={'missing__main__missedLi'}>*/}
-                        {/*                    <h3 className={'missing__main__subject'}>{courses[key]} :</h3>*/}
-                        {/*                    <p className={'missing__main__students'}>{dates.join('').toString()}</p>*/}
-                        {/*                </li>*/}
-                        {/*            )*/}
-                        {/*        })}*/}
-                        {/*    </ul>*/}
-                        {/*</div>*/}
                     </>
                 )}
             </div>
