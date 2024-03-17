@@ -40,12 +40,12 @@ export default function CreateMonths({setData, monthData}) {
                                     fill="white" stroke="white" strokeWidth="0.606061"/>
                             </svg>
                         </div>
-                        {/*<div className={'month__dates'}>*/}
-                        {/*    {element.map(element => {*/}
-                        {/*        return (<button key={uniqid()} onMouseDown={setData}*/}
-                        {/*                        className={'month__dates__date'}>{element}</button>)*/}
-                        {/*    })}*/}
-                        {/*</div>*/}
+                        <div className={'month__dates'}>
+                            {element.map(element => {
+                                return (<button key={uniqid()} onMouseDown={setData}
+                                                className={'month__dates__date'}>{element}</button>)
+                            })}
+                        </div>
                     </div>
                 )
             })}

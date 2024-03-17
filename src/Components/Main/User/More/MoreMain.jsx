@@ -9,7 +9,8 @@ import NotSelected from "../../../Reusable/NotSelected/NotSelected";
 
 export default function MoreMain() {
     const navigate = useNavigate()
-    const groupName = useSelector(state => state.schedules)
+    const schedule = useSelector(state => state.schedules.schedulesList)[0]
+    const groupName = useSelector(state => state.schedules.groupName)
     const statusSchedule = useSelector(state => state.schedules.status)
     const statusJournal= useSelector(state => state.journal.status)
     const errorSchedule = useSelector(state => state.schedules.error)
@@ -18,6 +19,7 @@ export default function MoreMain() {
     useEffect(() => {
         if (!localStorage.user) navigate('/#')
     }, []);
+
     return (
         <Routes>
             <Route path={''} element={<Category/>}/>
@@ -27,7 +29,7 @@ export default function MoreMain() {
                     {!statusSchedule || !statusJournal ? <Loader/> :
                         errorSchedule || errorJournal ? <DontHaveData/> : (
                             <>
-                                {groupName === 'group' ?
+                                {groupName === 'group' || Object.keys(schedule[groupName]).length === 0?
                                     <NotSelected text={`a group`}/> : (
                                         <JournalMore/>
                                     )}

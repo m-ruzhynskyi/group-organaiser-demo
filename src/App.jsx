@@ -6,10 +6,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {getData, getLink} from "./store/journalSlice";
 import {getSchedules} from "./store/schedulesSlice";
 import {recoverUser} from "./store/userSlice";
+import Blackout from "./Components/Main/Blackout/Blackout";
 
 function App() {
     const dispatch = useDispatch()
     const journalLink = useSelector(state => state.journal.journalLink)
+    const blackout = useSelector(state => state.blackout.blackout)
 
     useEffect(() => {
         dispatch(getSchedules())
@@ -30,6 +32,7 @@ function App() {
     }, [dispatch]);
     return (
         <>
+            {blackout && <Blackout/>}
             <SideMenu/>
             <Main/>
         </>
