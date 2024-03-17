@@ -8,8 +8,6 @@ export default function Blackout() {
     const dispatch = useDispatch()
     const {date, mode, missInfo} = useSelector(state => state.blackout)
 
-    console.log(date, mode, missInfo)
-
     function handleClose() {
         dispatch(setBlackout())
     }

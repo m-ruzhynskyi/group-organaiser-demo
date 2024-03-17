@@ -35,5 +35,8 @@
 .professor__info__name {
   font-family: "PoppinsSemiBold", serif;
 }
+.professor__info::-webkit-scrollbar {
+  display: none;
+}
 
 /*# sourceMappingURL=professorsBlock.css.map */

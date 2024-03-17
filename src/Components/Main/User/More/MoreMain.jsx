@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import Loader from "../../../Reusable/Loader/Loader";
 import DontHaveData from "../../../Reusable/DontHaveData/DontHaveData";
 import NotSelected from "../../../Reusable/NotSelected/NotSelected";
+import Moderate from "./Moderate/Moderate";
 
 export default function MoreMain() {
     const navigate = useNavigate()
@@ -37,6 +38,7 @@ export default function MoreMain() {
                         )}
                 </div>
             }/>
+            <Route path={'moderate'} element={<Moderate/>}/>
         </Routes>
     )
 }

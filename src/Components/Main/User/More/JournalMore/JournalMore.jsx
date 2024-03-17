@@ -33,7 +33,6 @@ export default function JournalMore() {
     useEffect(() => {
         if (date.length > 0) {
             const missingStudents = getMissingStudents(date, schedulesList[0][groupName]['students'], schedulesList[0][groupName]['subjects']);
-            console.log(missingStudents);
             dispatch(setMissingInfo({
                 date: completedDate,
                 mode: 'journal',

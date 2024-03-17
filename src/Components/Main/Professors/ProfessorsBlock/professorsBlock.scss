@@ -40,5 +40,9 @@
     &__name {
       font-family: 'PoppinsSemiBold', serif;
     }
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
   }
 }
