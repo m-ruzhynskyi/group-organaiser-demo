@@ -5,6 +5,8 @@
   height: clamp(14rem, 8.182vw + 12.057rem, 21.875rem);
   width: clamp(19.5rem, 11.558vw + 16.755rem, 30.625rem);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.19);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .day [class^=MuiDivider] {
   border-color: #ffffff;

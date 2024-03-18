@@ -1,5 +1,5 @@
 $mainWidth: clamp(22.875rem, 77.987vw + 4.353rem, 97.938rem);
-$buttonBlockHeight: clamp(30.375rem, 11.961vw + 27.46rem, 41.813rem);
+$buttonBlockHeight: 70vh;
 
 [class^='block__wrapper-'], [class^='block-'] {
   background-color: white;

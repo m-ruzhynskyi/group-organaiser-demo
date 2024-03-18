@@ -71,12 +71,12 @@
 
 .block__wrapper-professors, .block-professors {
   justify-content: flex-end;
-  height: clamp(30.375rem, 11.961vw + 27.46rem, 41.813rem);
+  height: 70vh;
   width: 50%;
 }
 @media screen and (max-width: 1250px) {
   .block__wrapper-professors, .block-professors {
-    height: calc(clamp(30.375rem, 11.961vw + 27.46rem, 41.813rem) / 2);
+    height: 35vh;
     width: 100%;
   }
 }
@@ -105,12 +105,12 @@
 
 .block__wrapper-schedule, .block-schedule {
   justify-content: flex-start;
-  height: clamp(30.375rem, 11.961vw + 27.46rem, 41.813rem);
+  height: 70vh;
   width: 50%;
 }
 @media screen and (max-width: 1250px) {
   .block__wrapper-schedule, .block-schedule {
-    height: calc(clamp(30.375rem, 11.961vw + 27.46rem, 41.813rem) / 2);
+    height: 35vh;
     width: 100%;
   }
 }

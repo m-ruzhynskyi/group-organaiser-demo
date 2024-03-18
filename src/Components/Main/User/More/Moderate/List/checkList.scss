@@ -8,7 +8,7 @@
   align-items: center;
 
   &__students {
-    height: 70vh;
+    height: clamp(26.25rem, 10.714vw + 23.705rem, 36.563rem);
     overflow-y: auto;
     scroll-behavior: smooth;
 
