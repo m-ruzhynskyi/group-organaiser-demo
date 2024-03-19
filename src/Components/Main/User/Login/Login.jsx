@@ -27,6 +27,7 @@ export default function Login(){
             navigate('/more')
             localStorage.setItem('user',user)
         }
+        // eslint-disable-next-line
     }, [user]);
     return(
             <div className={'login'}>

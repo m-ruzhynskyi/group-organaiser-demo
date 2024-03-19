@@ -14,7 +14,7 @@ export default function Logout() {
 
     useEffect(() => {
         if(!localStorage.user) navigate('/')
-    }, []);
+    }, [navigate]);
     return(
         <div className={'logoutPage'}>
             <button className={'logout__logout'} onClick={handleLogout}>Logout</button>

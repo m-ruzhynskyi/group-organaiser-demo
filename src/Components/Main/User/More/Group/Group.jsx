@@ -3,7 +3,6 @@ import Loader from "../../../../Reusable/Loader/Loader";
 import DontHaveData from "../../../../Reusable/DontHaveData/DontHaveData";
 import SelectList from "../../../../Reusable/SelectList/SelectList";
 import NotSelected from "../../../../Reusable/NotSelected/NotSelected";
-import CheckList from "../Moderate/List/CheckList";
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import MissStudent from "./CreateMissStudent/missStudent";

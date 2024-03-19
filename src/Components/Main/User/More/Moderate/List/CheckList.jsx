@@ -11,7 +11,6 @@ export default function CheckList({subject, mode}) {
     const dispatch = useDispatch()
     const {groupName, schedulesList} = useSelector(state => state.schedules)
     const journalLink = useSelector(state => state.journal.journalLink)
-    const journal = useSelector(state => state.journal.journal)
     const students = schedulesList[0][groupName]['students']
     const subjects = schedulesList[0][groupName]['subjects']
     const navigate = useNavigate()

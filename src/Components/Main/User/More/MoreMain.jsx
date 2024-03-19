@@ -1,6 +1,6 @@
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Category from "./Category/Category";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import JournalMore from "./JournalMore/JournalMore";
 import {useSelector} from "react-redux";
 import Loader from "../../../Reusable/Loader/Loader";
@@ -20,7 +20,7 @@ export default function MoreMain() {
 
     useEffect(() => {
         if (!localStorage.user) navigate('/#')
-    }, []);
+    }, [navigate]);
 
     return (
         <Routes>

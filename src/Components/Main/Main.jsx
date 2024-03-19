@@ -11,7 +11,6 @@ import MoreMain from "./User/More/MoreMain";
 
 export default function Main() {
     const link = useLocation()['pathname'].replace('/', '')
-    const user = useSelector(state => state.user.user)
     const menuStatus = useSelector(state => state.menu.menuStatus)
     return (
         <main style={{display: menuStatus ? 'flex' : 'none'}} className={'main'}>

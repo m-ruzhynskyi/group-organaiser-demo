@@ -32,6 +32,7 @@ export default function MissStudent({student, subject}) {
                 setMissingDates(tempObj)
                 break
         }
+        // eslint-disable-next-line
     }, [subject, student]);
 
     return (

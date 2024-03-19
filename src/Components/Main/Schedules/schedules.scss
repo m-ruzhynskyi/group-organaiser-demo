@@ -1,7 +1,7 @@
-.schedule{
+.schedule {
   display: flex;
 
-  &__wrapper{
+  &__wrapper {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -10,5 +10,6 @@
     height: 70vh;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-top: clamp(0.813rem, 2.857vw - 1.241rem, 2.188rem);
   }
 }
