@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/group-organaiser/static/css/main.04ce0048.css",
-    "main.js": "/group-organaiser/static/js/main.bd9526cd.js",
+    "main.css": "/group-organaiser/static/css/main.edc51572.css",
+    "main.js": "/group-organaiser/static/js/main.3bdd9f1b.js",
     "static/media/Poppins-Regular.ttf": "/group-organaiser/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/group-organaiser/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-SemiBold.ttf": "/group-organaiser/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
@@ -14,11 +14,11 @@
     "static/media/moderate.png": "/group-organaiser/static/media/moderate.4fa370fc5f716331dd83.png",
     "static/media/logoSvg.svg": "/group-organaiser/static/media/logoSvg.17c5cf3f66008521b7d83e055d52284e.svg",
     "index.html": "/group-organaiser/index.html",
-    "main.04ce0048.css.map": "/group-organaiser/static/css/main.04ce0048.css.map",
-    "main.bd9526cd.js.map": "/group-organaiser/static/js/main.bd9526cd.js.map"
+    "main.edc51572.css.map": "/group-organaiser/static/css/main.edc51572.css.map",
+    "main.3bdd9f1b.js.map": "/group-organaiser/static/js/main.3bdd9f1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.04ce0048.css",
-    "static/js/main.bd9526cd.js"
+    "static/css/main.edc51572.css",
+    "static/js/main.3bdd9f1b.js"
   ]
 }
