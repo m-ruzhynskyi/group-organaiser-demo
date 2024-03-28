@@ -19,9 +19,9 @@ export default function Category() {
         <div className={'variantsBlock'}>
             <div className={'variantsBlock__variants'}>
                 <CreateBlock nextPage={nextPage}/>
-                {(user === 'helper' || user === 'admin') &&
-                    <CreateBlock type={'first'} nextPage={nextPage} user={user}/>}
-                {(user === 'admin') && <CreateBlock type={'second'} nextPage={nextPage} user={user}/>}
+                <CreateBlock ThirdLevelRender={1} nextPage={nextPage}/>
+                {(user === 'helper' || user === 'admin') && <CreateBlock level={2} nextPage={nextPage}/>}
+                {(user === 'admin') && <CreateBlock level={1} nextPage={nextPage}/>}
             </div>
         </div>
     )

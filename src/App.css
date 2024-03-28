@@ -27,7 +27,7 @@ a{
     text-decoration: none;
 }
 
-.journal, .schedule, .professors, .variantsBlock, .moderate, .group{
+.journal, .schedule, .professors, .variantsBlock, .moderate, .group, .edit{
   justify-content: center;
   align-items: center;
   width: clamp(20.938rem, 80vw + 1.938rem, 97.938rem);
