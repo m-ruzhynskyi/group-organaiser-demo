@@ -85,12 +85,15 @@ export default function CheckList({subject, mode}) {
             if (mode === 'Present') specData = specData.map(element => !element)
             setData(specData)
         }
-    }, [subject]);
-
+    }, [subject, mode]);
+    useEffect(() => {
+        console.log(data)
+    }, [data]);
     return (
         <div className={'checkList'}>
             <div className={'checkList__students'}>
-                {students.map((student, id) => <CreateList student={student} check={data[id]} id={id} key={id}
+                {students.map((student, id) => <CreateList mode={mode} student={student} check={data[id]} id={id}
+                                                           key={id}
                                                            changeData={changeData}/>)}
             </div>
             <div className={'checkList__confirm'}>
