@@ -76,7 +76,7 @@
 }
 @media screen and (max-width: 1250px) {
   .block__wrapper-professors, .block-professors {
-    height: 35vh;
+    height: 28vh;
     width: 100%;
   }
 }
@@ -110,7 +110,7 @@
 }
 @media screen and (max-width: 1250px) {
   .block__wrapper-schedule, .block-schedule {
-    height: 35vh;
+    height: 28vh;
     width: 100%;
   }
 }
