@@ -9,6 +9,7 @@ import NotSelected from "../../../Reusable/NotSelected/NotSelected";
 import Moderate from "./Moderate/Moderate";
 import Group from "./Group/Group";
 import Edit from "./Edit/Edit";
+import Analytic from "./Analytic/Analytic";
 
 export default function MoreMain() {
     const navigate = useNavigate()
@@ -42,6 +43,7 @@ export default function MoreMain() {
             }/>
             <Route path={'moderate'} element={<Moderate/>}/>
             <Route path={'edit'} element={<Edit/>}/>
+            <Route path={'analytic'} element={<Analytic/>}/>
             <Route path={'group'} element={<Group/>}/>
         </Routes>
     )

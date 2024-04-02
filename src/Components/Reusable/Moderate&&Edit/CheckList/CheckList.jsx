@@ -86,9 +86,7 @@ export default function CheckList({subject, mode}) {
             setData(specData)
         }
     }, [subject, mode]);
-    useEffect(() => {
-        console.log(data)
-    }, [data]);
+
     return (
         <div className={'checkList'}>
             <div className={'checkList__students'}>

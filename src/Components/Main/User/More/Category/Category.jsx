@@ -21,7 +21,12 @@ export default function Category() {
                 <CreateBlock nextPage={nextPage}/>
                 <CreateBlock ThirdLevelRender={1} nextPage={nextPage}/>
                 {(user === 'helper' || user === 'admin') && <CreateBlock level={2} nextPage={nextPage}/>}
-                {(user === 'admin') && <CreateBlock level={1} nextPage={nextPage}/>}
+                {(user === 'admin') && (
+                    <>
+                        <CreateBlock level={1} nextPage={nextPage}/>
+                        <CreateBlock level={1} FirstLevelRender={1} nextPage={nextPage}/>
+                    </>
+                )}
             </div>
         </div>
     )
