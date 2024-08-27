@@ -4,6 +4,7 @@ import CreateMonths from "./CreateMonth/CreateMonth";
 import sortDates from "../../../../functions/sortDates";
 import getMissingStudents from "../../../../functions/getMissingStudents";
 import {setBlackout, setMissingInfo} from "../../../../../store/blackoutSlice";
+import BackArrow from "../../../../Reusable/BackArrow/BackArrow";
 
 
 export default function JournalMore() {
@@ -44,6 +45,7 @@ export default function JournalMore() {
 
     return (
         <div className={'journalMore'}>
+            <BackArrow/>
             <CreateMonths monthData={monthData} setData={setDateNext}/>
         </div>
     )

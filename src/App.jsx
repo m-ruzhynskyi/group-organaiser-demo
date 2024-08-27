@@ -33,7 +33,6 @@ function App() {
     return (
         <>
             {blackout && <Blackout/>}
-            <SideMenu/>
             <Main/>
         </>
     );

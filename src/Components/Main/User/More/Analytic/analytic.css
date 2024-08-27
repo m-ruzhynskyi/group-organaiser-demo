@@ -1,12 +1,16 @@
 .analytic {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .analytic .analytics__table {
   display: flex;
-  height: 70vh;
+  height: 80vh;
   overflow: hidden;
   overflow-y: auto;
   padding-right: 15px;
+  justify-content: center;
+  width: 100%;
 }
 .analytic .analytics__table [class$=-wrapper] {
   display: flex;

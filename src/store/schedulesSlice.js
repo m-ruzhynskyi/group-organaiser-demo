@@ -5,7 +5,7 @@ export const getSchedules = createAsyncThunk(
     'schedules/getSchedules',
     async function (_, {rejectWithValue}) {
         try {
-            const response = await axios.get('https://65e5ffb1d7f0758a76e7ec04.mockapi.io/shedule')
+            const response = await axios.get('https://65f9c09f3909a9a65b194987.mockapi.io/data/info')
             return response.data
         } catch (error) {
             return rejectWithValue(error.message)
@@ -17,7 +17,7 @@ const schedulesSlice = createSlice({
     name: 'schedules',
     initialState: {
         schedulesList: [],
-        groupName: 'group',
+        groupName: 'ПР-3-1',
         status: null,
         error: null
     },

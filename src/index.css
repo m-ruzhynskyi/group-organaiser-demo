@@ -1,22 +1,23 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 body {
-    background-color: rgba(50, 157, 156, 1);
-    color: white;
+  background-color: rgba(50, 157, 156, 1);
+  color: white;
 }
 
 #wrapper {
-    display: flex;
-    @media only screen and (max-width: 950px) {
-        &{
-            display: block;
-            flex-direction: column;
-            height: 80vh;
-        }
+  display: flex;
+  height: 100vh;
+  
+  @media only screen and (max-width: 950px) {
+    & {
+      display: block;
+      flex-direction: column;
     }
+  }
 }

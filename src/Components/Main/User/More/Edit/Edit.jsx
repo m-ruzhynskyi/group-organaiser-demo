@@ -28,7 +28,6 @@ export default function Edit() {
                     errorSchedule || errorJournal ? <DontHaveData/> : (
                         <>
                             <div className={'button__div'}>
-                                {console.log(getTodaySubjectData(journal,  (groupName === 'group' || Object.keys(schedule[groupName]).length === 0 ? [] : schedule[groupName]['subjects'])))}
                                 <Buttons chosenSubj={chosenSubj}
                                          newSubject={(e) => newSubject(e) && setChosenSubj(newSubject(e))}
                                          list={getTodaySubjectData(journal,  (groupName === 'group' || Object.keys(schedule[groupName]).length === 0 ? [] : schedule[groupName]['subjects']))}/>

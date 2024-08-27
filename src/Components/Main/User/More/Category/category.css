@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 .variantsBlock__variants {
-  height: 70vh;
+  height: 80vh;
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
