@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/group-organaiser/static/css/main.0dbe8f31.css",
-    "main.js": "/group-organaiser/static/js/main.8384c17c.js",
+    "main.css": "/group-organaiser/static/css/main.887d3ba4.css",
+    "main.js": "/group-organaiser/static/js/main.f1737211.js",
     "static/media/Poppins-Regular.ttf": "/group-organaiser/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/group-organaiser/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-SemiBold.ttf": "/group-organaiser/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
@@ -16,11 +16,11 @@
     "static/media/moderate.png": "/group-organaiser/static/media/moderate.4fa370fc5f716331dd83.png",
     "static/media/logoSvg.svg": "/group-organaiser/static/media/logoSvg.b5dbb88b78c93b6433cd682bbfddecdb.svg",
     "index.html": "/group-organaiser/index.html",
-    "main.0dbe8f31.css.map": "/group-organaiser/static/css/main.0dbe8f31.css.map",
-    "main.8384c17c.js.map": "/group-organaiser/static/js/main.8384c17c.js.map"
+    "main.887d3ba4.css.map": "/group-organaiser/static/css/main.887d3ba4.css.map",
+    "main.f1737211.js.map": "/group-organaiser/static/js/main.f1737211.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dbe8f31.css",
-    "static/js/main.8384c17c.js"
+    "static/css/main.887d3ba4.css",
+    "static/js/main.f1737211.js"
   ]
 }
