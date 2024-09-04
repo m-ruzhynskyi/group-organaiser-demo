@@ -56,5 +56,14 @@
 .loginForm__form button:active {
   background-color: #2cc053;
 }
+.loginForm .hint__bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.loginForm .hint__bar .hint {
+  font-family: "PoppinsMedium", serif;
+  font-size: 16px;
+}
 
 /*# sourceMappingURL=loginPage.css.map */
