@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/group-organaiser/static/css/main.887d3ba4.css",
-    "main.js": "/group-organaiser/static/js/main.f1737211.js",
-    "static/media/Poppins-Regular.ttf": "/group-organaiser/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
-    "static/media/Poppins-Medium.ttf": "/group-organaiser/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
-    "static/media/Poppins-SemiBold.ttf": "/group-organaiser/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
-    "static/media/Poppins-Bold.ttf": "/group-organaiser/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
-    "static/media/professors.svg": "/group-organaiser/static/media/professors.6c66f857dffc1001f0f40e536bc61b29.svg",
-    "static/media/choose.svg": "/group-organaiser/static/media/choose.7eb0320c0dd42231a48923cef2d89bfb.svg",
-    "static/media/dontHaveData.svg": "/group-organaiser/static/media/dontHaveData.4c6771b5b1cb3c3eb945614d4ee87dc5.svg",
-    "static/media/Slackey-Regular.ttf": "/group-organaiser/static/media/Slackey-Regular.3e823f8310895440fd6a.ttf",
-    "static/media/data-analytics.png": "/group-organaiser/static/media/data-analytics.637b66f9ade09bbbe563.png",
-    "static/media/group.png": "/group-organaiser/static/media/group.c1e6261f1cac09957009.png",
-    "static/media/edit.png": "/group-organaiser/static/media/edit.954f43c86476234d05c9.png",
-    "static/media/moderate.png": "/group-organaiser/static/media/moderate.4fa370fc5f716331dd83.png",
-    "static/media/logoSvg.svg": "/group-organaiser/static/media/logoSvg.b5dbb88b78c93b6433cd682bbfddecdb.svg",
-    "index.html": "/group-organaiser/index.html",
-    "main.887d3ba4.css.map": "/group-organaiser/static/css/main.887d3ba4.css.map",
-    "main.f1737211.js.map": "/group-organaiser/static/js/main.f1737211.js.map"
+    "main.css": "/group-organaiser-demo/static/css/main.91f4cc38.css",
+    "main.js": "/group-organaiser-demo/static/js/main.595f91a4.js",
+    "static/media/Poppins-Regular.ttf": "/group-organaiser-demo/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/group-organaiser-demo/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/group-organaiser-demo/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/group-organaiser-demo/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/professors.svg": "/group-organaiser-demo/static/media/professors.6c66f857dffc1001f0f40e536bc61b29.svg",
+    "static/media/choose.svg": "/group-organaiser-demo/static/media/choose.7eb0320c0dd42231a48923cef2d89bfb.svg",
+    "static/media/dontHaveData.svg": "/group-organaiser-demo/static/media/dontHaveData.4c6771b5b1cb3c3eb945614d4ee87dc5.svg",
+    "static/media/Slackey-Regular.ttf": "/group-organaiser-demo/static/media/Slackey-Regular.3e823f8310895440fd6a.ttf",
+    "static/media/data-analytics.png": "/group-organaiser-demo/static/media/data-analytics.637b66f9ade09bbbe563.png",
+    "static/media/group.png": "/group-organaiser-demo/static/media/group.c1e6261f1cac09957009.png",
+    "static/media/edit.png": "/group-organaiser-demo/static/media/edit.954f43c86476234d05c9.png",
+    "static/media/moderate.png": "/group-organaiser-demo/static/media/moderate.4fa370fc5f716331dd83.png",
+    "static/media/logoSvg.svg": "/group-organaiser-demo/static/media/logoSvg.b5dbb88b78c93b6433cd682bbfddecdb.svg",
+    "index.html": "/group-organaiser-demo/index.html",
+    "main.91f4cc38.css.map": "/group-organaiser-demo/static/css/main.91f4cc38.css.map",
+    "main.595f91a4.js.map": "/group-organaiser-demo/static/js/main.595f91a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.887d3ba4.css",
-    "static/js/main.f1737211.js"
+    "static/css/main.91f4cc38.css",
+    "static/js/main.595f91a4.js"
   ]
 }
